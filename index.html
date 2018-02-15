@@ -12,7 +12,6 @@
     <script src="https://connectors.tableau.com/libs/tableauwdc-2.3.latest.js" type="text/javascript"></script>
     <script src="CollectApiData.js" type="text/javascript"></script>
     <script src="ProjectOrganicGetListRankingsFilter.js" type="text/javascript"></script>
-   
     <script src="ResearchOrganicGetListRankingsDomain.js" type="text/javascript"></script>
 	<script src="ResearchOrganicGetListRankingsKeyword.js" type="text/javascript"></script>
 	<script src="ResearchOrganicGetListRankingsKeywordLongtail.js" type="text/javascript"></script>
@@ -58,6 +57,12 @@
 				'offset'
 			]
 		},
+		ResearchOrganicGetListIndustrySpread: {
+			show: [
+				'countrycode',
+				'url'
+				]
+		},
         ResearchOrganicGetListRankingsDomain: {
 			show: [
 				'url',
@@ -78,32 +83,11 @@
 			
 		},
 		
-		ResearchLinksGetListBacklinks: {
-			show:[
-				'url',
-				'limit',
-				'offset'
-				]
-		
-		},	
-		
-		ResearchKeywordsGetListLosers: {
+		ResearchOrganicGetListSeoVisibilityCountry: {
 			show: [
-				'countrycode',
-				'url',
-				'limit',
-				'offset'
+				'url'
 				]
-		},	
-		
-		ResearchKeywordsGetListWinners: {
-			show: [
-				'countrycode',
-				'url',
-				'limit',
-				'offset'
-				]
-		},
+		}, 
 		
 		ResearchOrganicGetListSeoVisibilityTop100Losers: {
 			show:[
@@ -114,62 +98,6 @@
 		ResearchOrganicGetListSeoVisibilityTop100Winners: {
 			show:[
 				'countrycode'
-				]
-		},
-		
-		
-		ResearchContentGetListUrlKeywordRankings: {
-			show:[
-				'countrycode',
-				'url',
-				'limit',
-				'offset'
-				]
-		
-		},
-		
-		ResearchContentGetListTopUrls: {
-			show: [
-				'domain',
-				'countrycode',
-				'limit',
-				'offset'
-				]
-		},
-		
-		ResearchContentGetListLoserUrls: {
-			show:[
-				'countrycode',
-				'domain',
-				'limit',
-				'offset'
-				]
-		},
-		ResearchContentGetListWinnerUrls: {
-			show:[
-				'countrycode',
-				'domain',
-				'limit',
-				'offset'
-				]
-		},
-
-        ResearchContentGetListCompetitorUrls: {
-			show: [
-				'url',
-				'countrycode',
-				'limit',
-				'offset'
-				]
-		},
-		
-		ResearchOrganicGetListCompetitors: {
-			show: [
-				'url',
-				'countrycode',
-				'currency',
-				'limit',
-				'offset'
 				]
 		},
 		
@@ -189,6 +117,44 @@
 				]
 		},
 		
+		ResearchOrganicGetValueSeoRank: {
+			show: [
+				'url',
+				'countrycode'
+				]
+		},
+		ResearchOrganicGetValueSeoVisibility: {
+			show: [
+				'countrycode',
+				'url'
+				]
+		},
+		
+		ResearchOrganicGetValueSeoVisibilityWorld: {
+			show: [
+				'url'
+				]
+		
+		},
+		
+		
+		ResearchKeywordsGetListKeywordinfo: {
+			show: [
+				'keyword',
+				'countrycode',
+				'currency'
+				
+				]
+		},
+		
+		ResearchKeywordsGetListLosers: {
+			show: [
+				'countrycode',
+				'url',
+				'limit',
+				'offset'
+				]
+		},	
 		ResearchKeywordsGetListSimilarKeywords: {
 			show: [
 				'keyword',
@@ -196,12 +162,24 @@
 				]
 		},
 		
-		ResearchOrganicGetListIndustrySpread: {
+		ResearchKeywordsGetListWinners: {
 			show: [
 				'countrycode',
-				'url'
+				'url',
+				'limit',
+				'offset'
 				]
 		},
+		
+		ResearchLinksGetListBacklinks: {
+			show:[
+				'url',
+				'limit',
+				'offset'
+				]
+		
+		},	
+		
 		
 		ResearchLinksGetListLinkedPages: {
 			show: [
@@ -226,58 +204,6 @@
 				'url'
 				]
 		},
-		ResearchUniversalGetListRankingsDomain: {
-			show:[
-				'countrycode',
-				'url',
-				'limit',
-				'offset'
-				]
-		},
-				
-		ResearchOrganicGetValueSeoVisibility: {
-			show: [
-				'countrycode',
-				'url'
-				]
-		},
-		
-		ResearchOrganicGetValueSeoVisibilityWorld: {
-			show: [
-				'url'
-				]
-		
-		},
-		
-		ResearchOrganicGetValueSeoRank: {
-			show: [
-				'url',
-				'countrycode'
-				]
-		},
-		
-		ResearchOrganicGetListSeoVisibilityCountry: {
-			show: [
-				'url'
-				]
-		}, 
-		
-		ResearchKeywordsGetListKeywordinfo: {
-			show: [
-				'keyword',
-				'countrycode',
-				'currency'
-				
-				]
-		},
-		
-		ResearchUniversalGetListVisibility: {
-			show: [
-				'countrycode',
-				'url'
-				]
-		},
-		
 		ResearchSocialGetListTopUrls: {
 			show: [	
 				'url',
@@ -286,6 +212,75 @@
 				]
 		}
 		,
+		
+		ResearchUniversalGetListRankingsDomain: {
+			show:[
+				'countrycode',
+				'url',
+				'limit',
+				'offset'
+				]
+		},
+					
+		ResearchUniversalGetListVisibility: {
+			show: [
+				'countrycode',
+				'url'
+				]
+		},
+		ResearchOrganicGetListCompetitors: {
+			show: [
+				'url',
+				'countrycode',
+				'currency',
+				'limit',
+				'offset'
+				]
+		},
+		ResearchContentGetListCompetitorUrls: {
+			show: [
+				'url',
+				'countrycode',
+				'limit',
+				'offset'
+				]
+		},
+		ResearchContentGetListLoserUrls: {
+			show:[
+				'countrycode',
+				'domain',
+				'limit',
+				'offset'
+				]
+		},
+		ResearchContentGetListTopUrls: {
+			show: [
+				'domain',
+				'countrycode',
+				'limit',
+				'offset'
+				]
+		},
+				
+		ResearchContentGetListUrlKeywordRankings: {
+			show:[
+				'countrycode',
+				'url',
+				'limit',
+				'offset'
+				]
+		
+		},
+					
+		ResearchContentGetListWinnerUrls: {
+			show:[
+				'countrycode',
+				'domain',
+				'limit',
+				'offset'
+				]
+		},
+
 		ProjectOrganicGetListRankingsFilter: {
 			show: [
 				'url',
