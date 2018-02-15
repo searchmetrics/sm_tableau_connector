@@ -29,15 +29,24 @@ return {
 	
 function transformResearchOrganicGetListRankingsKeywordLongtailData(data){
 	var collectedData = [];
-
-	data.response.map(function(el){
-		collectedData.push({
-			"url": el.url,
-			"title": el.title,
-			"position": el.position,
-			"page": el.page                 
-		});
-	});
+	var el = data.response;
 	
+		if (el.length > 0){	
+			data.response.map(function(el){
+				collectedData.push({
+					"url": el.url,
+					"title": el.title,
+					"position": el.position,
+					"page": el.page                 
+				});
+			});
+			} else{
+					collectedData.push({
+					"url": "n/a",
+					"title": "n/a",
+					"position": "n/a",
+					"page": "n/a"     
+						});
+		}
 	return collectedData;
 }

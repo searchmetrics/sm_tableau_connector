@@ -41,19 +41,34 @@ function getResearchSocialGetListTopUrlsSchema() {
 
 function transformResearchSocialGetListTopUrlsData(data){
 	var collectedData = [];
-
-	data.response.map(function(el){
-		console.log(el);
+	var el = data.response;
+	
+	console.log(el);
+	
+	if(el.length > 0){
+			data.response.map(function(el){
+				
+				collectedData.push({
+					
+					"url": el.url,
+					"svi": el.svi,
+					"fb.to": el['fb.to'],
+					"li.to": el['li.to'],
+					"gp.to": el['gp.to'],				
+					"pi.to": el['pi.to']
+				});
+			});
+	}else{
 		collectedData.push({
+					"url": 'n/a',
+					"svi": 'n/a',
+					"fb.to": 'n/a',
+					"li.to": 'n/a',
+					"gp.to": 'n/a',				
+					"pi.to": 'n/a'
 			
-			"url": el.url,
-			"svi": el.svi,
-			"fb.to": el['fb.to'],
-			"li.to": el['li.to'],
-			"gp.to": el['gp.to'],				
-			"pi.to": el['pi.to']
 		});
-	});
+	}
 	
 	return collectedData;
 }

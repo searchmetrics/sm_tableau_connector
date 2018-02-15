@@ -31,16 +31,25 @@ function getResearchLinksGetListLinktextSchema() {
 
 function transformResearchLinksGetListLinktextData(data){
 	var collectedData = [];
-
-	data.response.map(function(el){
-		collectedData.push({
-			"anchortext": el.anchortext,
-			"frequency": el.frequency,
-			"percentage": el.percentage,
-			"refdoms": el.refdoms
-		});
-	});
+	var el = data.response;
 	
+		if (typeof el !== 'undefined'){	
+			data.response.map(function(el){
+				collectedData.push({
+					"anchortext": el.anchortext,
+					"frequency": el.frequency,
+					"percentage": el.percentage,
+					"refdoms": el.refdoms
+				});
+			});
+		} else{
+				collectedData.push({
+					"anchortext": "n/a",
+					"frequency": "n/a",
+					"percentage": "n/a",
+					"refdoms": "n/a"   
+					});
+		}
 	return collectedData;
 }
 

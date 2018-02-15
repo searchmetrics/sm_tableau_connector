@@ -37,17 +37,25 @@ function getResearchLinksGetValueLinkRankSchema() {
 function transformResearchLinksGetValueLinkRankData(data){
 	
 	var collectedData = [];
-var el = data.response;
-console.log(el);
-//	data.response.map(function(el){
-		collectedData.push({
-			"domain": el.domain,
-			"ccode": el.ccode,
-			"rank": el.rank,
-			"maxrank": el.maxrank,
-			"avgrank": el.avgrank
-		});
-	//});
+	var el = data.response;
+	console.log(el);
+		if (typeof el !=='undefined'){	
+			collectedData.push({
+				"domain": el.domain,
+				"ccode": el.ccode,
+				"rank": el.rank,
+				"maxrank": el.maxrank,
+				"avgrank": el.avgrank
+			});
+		} else{
+				collectedData.push({
+				"domain": "n/a",
+				"ccode": "n/a",
+				"rank": "n/a",
+				"maxrank": "n/a",
+				"avgrank": "n/a"   
+					});
+		}
 	
 	return collectedData;
 }

@@ -95,28 +95,52 @@ function getResearchContentGetListTopUrlsSchema() {
 
 function transformResearchContentGetListTopUrlsData(data){
 	var collectedData = [];
-
-	data.response.map(function(el){
-		collectedData.push({
-			"url": el.url,
-			"keyword_count": el.keyword_count,
-			"avg_position": el.avg_position,
-			"search_volume_total": el.search_volume_total,
-			"avg_cpc": el.avg_cpc,
-			"traffic_index_total": el.traffic_index_total,
-			"traffic_potential_total": el.traffic_potential_total,
-			"traffic_index_delta": el.traffic_index_delta,
-			"seo_value": el.seo_value,
-			"seo_value_potential": el.seo_value_potential,
-			"seo_value_delta": el.seo_value_delta,
-			"title": el.title,
-			"social_sum": el.social_sum,
-			"social_fbsh": el.social_fbsh,
-			"social_gp": el.social_gp,
-			"backlinks": el.backlinks,
-			"refdoms": el.refdoms        
-		});
-	});
+	var el = data.response;
+		
+		if (el.length > 0){	
+			data.response.map(function(el){
+				collectedData.push({
+					"url": el.url,
+					"keyword_count": el.keyword_count,
+					"avg_position": el.avg_position,
+					"search_volume_total": el.search_volume_total,
+					"avg_cpc": el.avg_cpc,
+					"traffic_index_total": el.traffic_index_total,
+					"traffic_potential_total": el.traffic_potential_total,
+					"traffic_index_delta": el.traffic_index_delta,
+					"seo_value": el.seo_value,
+					"seo_value_potential": el.seo_value_potential,
+					"seo_value_delta": el.seo_value_delta,
+					"title": el.title,
+					"social_sum": el.social_sum,
+					"social_fbsh": el.social_fbsh,
+					"social_gp": el.social_gp,
+					"backlinks": el.backlinks,
+					"refdoms": el.refdoms        
+				});
+			});
+			} else{
+				collectedData.push({
+					"url": "n/a",
+					"keyword_count": "n/a",
+					"avg_position": "n/a",
+					"search_volume_total": "n/a",
+					"avg_cpc": "n/a",
+					"traffic_index_total": "n/a",
+					"traffic_potential_total": "n/a",
+					"traffic_index_delta": "n/a",
+					"seo_value": "n/a",
+					"seo_value_potential": "n/a",
+					"seo_value_delta": "n/a",
+					"title": "n/a",
+					"social_sum": "n/a",
+					"social_fbsh": "n/a",
+					"social_gp": "n/a",
+					"backlinks": "n/a",
+					"refdoms": "n/a"  
+					  
+					});
+		}
 	
 	return collectedData;
 }

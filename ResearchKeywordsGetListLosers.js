@@ -4,6 +4,16 @@ function getResearchKeywordsGetListLosersSchema() {
 		alias: "Research Keywords List Losers",
 		columns: [
 			{
+				id: "keyword",
+				alias: "keyword",
+				dataType: tableau.dataTypeEnum.string
+			},
+			{
+				id: "url",
+				alias: "url",
+				dataType: tableau.dataTypeEnum.string
+			},
+			{
 				id: "position",
 				alias: "position",
 				dataType: tableau.dataTypeEnum.int
@@ -43,16 +53,7 @@ function getResearchKeywordsGetListLosersSchema() {
 				alias: "traffic_monthly_last",
 				dataType: tableau.dataTypeEnum.float
 			},
-			{
-				id: "url",
-				alias: "url",
-				dataType: tableau.dataTypeEnum.string
-			},
-			{
-				id: "keyword",
-				alias: "keyword",
-				dataType: tableau.dataTypeEnum.string
-			},
+						
 			{
 				id: "search",
 				alias: "search",
@@ -64,23 +65,39 @@ function getResearchKeywordsGetListLosersSchema() {
 	
  function transformResearchKeywordsGetListLosersData(data){
 	var collectedData = [];
-
-	data.response.map(function(el){
-		collectedData.push({
-			"position": el.position,
-			"trend_position": el.trend_position,
-			"position_last": el.position_last, 
-			"delta_traffic_monthly": el.delta_traffic_monthly,
-			"search_volume_monthly": el.search_volume_monthly,
-			"cpc": el.cpc,
-			"traffic_monthly": el.traffic_monthly,
-			"traffic_monthly_last": el.traffic_monthly_last, 
-			"url": el.url, 
-			"keyword": el.keyword,
-			"search": el.search              
-		});
-	});
+	var el = data.response;
 	
+	if (el.length > 0){
+		data.response.map(function(el){
+			collectedData.push({
+				"keyword": el.keyword,
+				"url": el.url,
+				"position": el.position,
+				"trend_position": el.trend_position,
+				"position_last": el.position_last, 
+				"delta_traffic_monthly": el.delta_traffic_monthly,
+				"search_volume_monthly": el.search_volume_monthly,
+				"cpc": el.cpc,
+				"traffic_monthly": el.traffic_monthly,
+				"traffic_monthly_last": el.traffic_monthly_last, 
+				"search": el.search              
+			});
+		});
+	} else{
+			collectedData.push({
+				"keyword": 'n/a',
+				"url": 'n/a', 
+				"position": 'n/a',
+				"trend_position": 'n/a',
+				"position_last": 'n/a', 
+				"delta_traffic_monthly": 'n/a',
+				"search_volume_monthly": 'n/a',
+				"cpc": 'n/a',
+				"traffic_monthly": 'n/a',
+				"traffic_monthly_last": 'n/a', 
+				"search": 'n/a'  
+			});
+	}
 	return collectedData;
 }
 

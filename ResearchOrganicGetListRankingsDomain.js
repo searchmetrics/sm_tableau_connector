@@ -69,23 +69,41 @@ function getResearchOrganicGetListRankingsDomainSchema() {
 
 function transformResearchOrganicGetListRankingsDomainData(data){
 	var collectedData = [];
-
-	data.response.map(function(el){
-		collectedData.push({
-			"position": el.position,
-			"page": el.page,
-			"last_months_count": el.last_months_count,
-			"competition": el.competition,
-			"avg_popularity": el.avg_popularity,
-			"cpc": el.cpc,
-			"keyword": el.keyword,
-			"title": el.title,
-			"url": el.url,
-			"traffic": el.traffic,
-			"adbudget": el.adbudget,
-			"potential": el.potential                    
-		});
-	});
+	var el = data.response;
+	
+		if (el.length > 0){	
+			data.response.map(function(el){
+				collectedData.push({
+					"position": el.position,
+					"page": el.page,
+					"last_months_count": el.last_months_count,
+					"competition": el.competition,
+					"avg_popularity": el.avg_popularity,
+					"cpc": el.cpc,
+					"keyword": el.keyword,
+					"title": el.title,
+					"url": el.url,
+					"traffic": el.traffic,
+					"adbudget": el.adbudget,
+					"potential": el.potential                    
+				});
+			});
+		} else{
+				collectedData.push({
+					"position": "n/a",
+					"page": "n/a",
+					"last_months_count": "n/a",
+					"competition": "n/a",
+					"avg_popularity": "n/a",
+					"cpc": "n/a",
+					"keyword": "n/a",
+					"title": "n/a",
+					"url": "n/a",
+					"traffic": "n/a",
+					"adbudget": "n/a",
+					"potential": "n/a"   
+					});
+		}
 	
 	return collectedData;
 }

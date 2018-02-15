@@ -69,23 +69,40 @@ function getResearchUniversalGetListRankingsDomainSchema() {
 
 function transformResearchUniversalGetListRankingsDomainData(data){
 	var collectedData = [];
+	var el = data.response;
 
-	data.response.map(function(el){
-		collectedData.push({
-			"keyword": el.keyword,
-			"position": el.position,
-			"page": el.page,
-			"traffic_monthly": el.traffic_monthly,
-			"cpc": el.cpc,				
-			"type": el.type,
-			"competition": el.competition,
-			"search_volume_monthly": el.search_volume_monthly,
-			"title": el.title,
-			"url": el.url,
-			"search": el.search,
+	tableau.log(el);
+	if (el.length > 0){	
+		data.response.map(function(el){
+			collectedData.push({
+				"keyword": el.keyword,
+				"position": el.position,
+				"page": el.page,
+				"traffic_monthly": el.traffic_monthly,
+				"cpc": el.cpc,				
+				"type": el.type,
+				"competition": el.competition,
+				"search_volume_monthly": el.search_volume_monthly,
+				"title": el.title,
+				"url": el.url,
+				"search": el.search
+			});
 		});
-	});
-	
+	}else{
+		collectedData.push({
+				"keyword": 'n/a',
+				"position": 'n/a',
+				"page": 'n/a',
+				"traffic_monthly": 'n/a',
+				"cpc": 'n/a',				
+				"type": 'n/a',
+				"competition": 'n/a',
+				"search_volume_monthly": 'n/a',
+				"title": 'n/a',
+				"url": 'n/a',
+				"search": 'n/a'
+			});
+	}
 	return collectedData;
 }
 

@@ -32,9 +32,11 @@ function getResearchOrganicGetValueSeoVisibilitySchema() {
 function transformResearchOrganicGetValueSeoVisibilityData(data){
 	
 	var collectedData = [];
-var el = data.response;
+	var el = data.response;
 //console.log(el);
 //	data.response.map(function(el){
+	
+	if(typeof el !== 'undefined'){
 		collectedData.push({
 			"visibility": el.visibility,
 			"trend": el.trend.trend,
@@ -42,7 +44,14 @@ var el = data.response;
 			"trend_per": el.trend.per
 		});
 	//});
-	
+		}else{
+			collectedData.push({
+			"visibility": 'n/a',
+			"trend": 'n/a',
+			"trend_abs": 'n/a',
+			"trend_per": 'n/a'
+		});
+		};
 	return collectedData;
 }
 

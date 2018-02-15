@@ -46,21 +46,34 @@ function getResearchKeywordsGetListSimilarKeywordsSchema() {
 
 function transformResearchKeywordsGetListSimilarKeywordsData(data){
 	var collectedData = [];
-
-	data.response.map(function(el){
-		collectedData.push({
-			"keyword": el.keyword,
-			"search_volume": el.search_volume,
-			"trend": el.trend,
-			"cpc": el.cpc,
-			"advertiser_count": el.advertiser_count,
-			"integration": el.integration,
-			"adbudget": el.adbudget
+	var el = data.response;
+		if (el.length > 0){
+			data.response.map(function(el){
+				collectedData.push({
+					"keyword": el.keyword,
+					"search_volume": el.search_volume,
+					"trend": el.trend,
+					"cpc": el.cpc,
+					"advertiser_count": el.advertiser_count,
+					"integration": el.integration,
+					"adbudget": el.adbudget
+					
+					
+				});
+			});
+		}else {
+			collectedData.push({
+					"keyword": "n/a",
+					"search_volume": "n/a",
+					"trend": "n/a",
+					"cpc": "n/a",
+					"advertiser_count": "n/a",
+					"integration": "n/a",
+					"adbudget": "n/a"
+					});
 			
-			
-		});
-	});
-	
+		}
+		
 	return collectedData;
 }
 

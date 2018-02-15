@@ -56,20 +56,37 @@ return {
 function transformResearchContentGetListWinnerUrlsData(data){
 	var collectedData = [];
 
-	data.response.map(function(el){
-		collectedData.push({
-			"url": el.url,
-			"title": el.title,
-			"avg_cpc": el.average_cpc,
-			"trend_average_position_trend": el.trend_average_position.trend,
-			"total_traffic_index": el.total_traffic_index,
-			"delta_traffic_index": el.delta_traffic_index,
-			"total_search_volume": el.total_search_volume,
-			"total_visibility": el.total_visibility,
-			"trend_total_visibility_trend": el.trend_total_visibility.trend
-		});
-	});
-	
+	var el = data.response;
+		if (el.length > 0){	
+			data.response.map(function(el){
+				collectedData.push({
+					"url": el.url,
+					"title": el.title,
+					"avg_cpc": el.average_cpc,
+					"trend_average_position_trend": el.trend_average_position.trend,
+					"total_traffic_index": el.total_traffic_index,
+					"delta_traffic_index": el.delta_traffic_index,
+					"total_search_volume": el.total_search_volume,
+					"total_visibility": el.total_visibility,
+					"trend_total_visibility_trend": el.trend_total_visibility.trend
+				});
+			});
+			
+		} else{
+				collectedData.push({
+					"url": "n/a",
+					"title": "n/a",
+					"avg_cpc": "n/a",
+					"trend_average_position_trend": "n/a",
+					"total_traffic_index": "n/a",
+					"delta_traffic_index": "n/a",
+					"total_search_volume": "n/a",
+					"total_visibility": "n/a",
+					"trend_total_visibility_trend": "n/a"
+				
+				});
+		}
+		
 	return collectedData;
 }
 

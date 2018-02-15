@@ -5,11 +5,11 @@ function getResearchOrganicGetListSeoVisibilityCountrySchema() {
 		alias: "Research Organic  List Seo Visibility Country",
 		columns: [
 		
-			{
+			/*{
 				id: "domain",
 				alias: "domain",
 				dataType: tableau.dataTypeEnum.string
-			},
+			},*/
 			{
 				id: "visibility",
 				alias: "visibility",
@@ -29,11 +29,11 @@ function transformResearchOrganicGetListSeoVisibilityCountryData(data){
 	
 var collectedData = [];
 var el = data.response;
-var url = document.getElementById('url').value;
+//var url = document.getElementById('url').value;
 console.log(el);
 	data.response.map(function(el){
 		collectedData.push({
-			"domain": url,
+			//"domain": url,
 			"visibility": el.visibility,
 			"country_code": el.country_code
 		});

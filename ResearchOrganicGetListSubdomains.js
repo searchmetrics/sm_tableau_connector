@@ -22,14 +22,22 @@ function getResearchOrganicGetListSubdomainsSchema() {
 
 function transformResearchOrganicGetListSubdomainsData(data){
 	var collectedData = [];
+	var el = data.response;
 
-	data.response.map(function(el){
-		collectedData.push({
-			"host": el.host,
-			"spi_percent": el.spi_percent
-			
-		});
-	});
-
+		if (el.length > 0){	
+			data.response.map(function(el){
+				collectedData.push({
+					"host": el.host,
+					"spi_percent": el.spi_percent
+					
+				});
+			});
+		} else{
+				collectedData.push({
+					"host": "n/a",
+					"spi_percent": "n/a"   
+					});
+		}
+	
 	return collectedData;
 }

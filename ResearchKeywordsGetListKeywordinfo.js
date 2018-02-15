@@ -62,6 +62,8 @@ function transformResearchKeywordsGetListKeywordinfoData(data){
 	var el = data.response;
 	console.log(el);
 //	data.response.map(function(el){
+	
+	if (el.length >0){
 		collectedData.push({
 			"keyword": el[0].keyword,
 			"cpc": el[0].cpc,
@@ -74,6 +76,19 @@ function transformResearchKeywordsGetListKeywordinfoData(data){
 			"year_month": el[0].year_month
 			
 		});
+	}else{
+		collectedData.push({
+			"keyword": "n/a",
+			"cpc": "n/a",
+			"competition": "n/a",
+			"search_volume": "n/a",
+			"trend": "n/a",
+			"ad_budget": "n/a",
+			"integration": "n/a",
+			"advertiser_count": "n/a",
+			"year_month": "n/a"
+			});
+	}
 	//});
 	
 	return collectedData;

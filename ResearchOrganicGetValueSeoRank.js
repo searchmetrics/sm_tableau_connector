@@ -28,7 +28,7 @@ function transformResearchOrganicGetValueSeoRankData(data){
 	
 var collectedData = [];
 var el = data.response;
-//console.log(el);
+console.log(el);
 //	data.response.map(function(el){
 		collectedData.push({
 

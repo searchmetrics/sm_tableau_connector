@@ -55,20 +55,36 @@ function getResearchOrganicGetListCompetitorsSchema() {
 
 function transformResearchOrganicGetListCompetitorsData(data){
 	var collectedData = [];
-
-	data.response.map(function(el){
-		collectedData.push({
-			"domain": el.domain,
-			"avg_position_1": el.avg_position_1,
-			"avg_position_2": el.avg_position_2,
-			"common_keywords": el.common_keywords,
-			"traffic_1": el.traffic_1,
-			"traffic_2": el.traffic_2,
-			"costs": el.costs,
-			"total_kw_count": el.total_kw_count,
-			"diff_keywords": el.diff_keywords
-		});
-	});
+	var el = data.response;
+	
+		if (el.length > 0){	
+			data.response.map(function(el){
+				collectedData.push({
+					"domain": el.domain,
+					"avg_position_1": el.avg_position_1,
+					"avg_position_2": el.avg_position_2,
+					"common_keywords": el.common_keywords,
+					"traffic_1": el.traffic_1,
+					"traffic_2": el.traffic_2,
+					"costs": el.costs,
+					"total_kw_count": el.total_kw_count,
+					"diff_keywords": el.diff_keywords
+				});
+			});
+			
+		} else{
+			collectedData.push({
+					"domain": "n/a",
+					"avg_position_1": "n/a",
+					"avg_position_2": "n/a",
+					"common_keywords": "n/a",
+					"traffic_1": "n/a",
+					"traffic_2": "n/a",
+					"costs": "n/a",
+					"total_kw_count": "n/a",
+					"diff_keywords": "n/a"   
+					});
+		}
 	
 	return collectedData;
     }

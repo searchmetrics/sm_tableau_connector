@@ -212,56 +212,101 @@ function getResearchContentGetListCompetitorUrlsSchema() {
 function transformResearchContentGetListCompetitorUrlsData(data){
 	var	el = data.response;
 	var collectedData = [],
+	_this = this;
 	
-		//console.log(el);
-		_this = this;
-//console.log(el);
-	for (var i = 0, len = el.competitors.length; i < len; i++) {
-			collectedData.push({
-			   
-				"competitors_url": el.competitors[i].url,
-				"title": el.competitors[i].title,
-				"total_avg_position": el.competitors[i].total_avg_position,
-				"total_kw_count": el.competitors[i].total_kw_count,
-				"total_avg_cpc": el.competitors[i].total_avg_cpc,
-				"total_traffic_index": el.competitors[i].total_traffic_index,
-				"total_seo_value": el.competitors[i].total_seo_value,
-				"total_avg_seo_value": el.competitors[i].total_avg_seo_value,
-				"total_search_volume": el.competitors[i].total_search_volume,
-				"total_traffic_potential": el.competitors[i].total_traffic_potential,
-				"total_seo_value_potential": el.competitors[i].total_seo_value_potential,
-				"comp_kw_count": el.competitors[i].comp_kw_count,
-				"other_kw_count": el.competitors[i].other_kw_count,
-				"kw_relevance": el.competitors[i].kw_relevance,
-				"social_sum": el.competitors[i].social_sum,
-				"social_fbsh": el.competitors[i].social_fbsh,
-				"social_gp": el.competitors[i].social_gp,
-				"backlinks": el.competitors[i].backlinks,
-				"refdoms": el.competitors[i].refdoms,
-				"own_url": el.own.url,
-				"own_title": el.own.title,
-				"own_total_avg_position": el.own.total_avg_position,
-				"own_total_kw_count": el.own.total_kw_count,
-				"own_total_avg_cpc": el.own.total_avg_cpc,
-				"own_total_traffic_index": el.own.total_traffic_index,
-				"own_total_seo_value": el.own.total_seo_value,
-				"own_total_avg_seo_value": el.own.total_avg_seo_value,
-				"own_total_search_volume": el.own.total_search_volume,
-				"own_total_traffic_potential": el.own.total_traffic_potential,
-				"own_total_seo_value_potential": el.own.total_seo_value_potential,
-				"own_backlinks": el.own.backlinks,
-				"own_refdoms": el.own.refdoms,
-				"own_backlinks_max": el.own.backlinks_max,
-				"own_refdoms_max": el.own.refdoms_max,
-				"own_social_tw": el.own.social_tw,
-				"own_refdoms": el.own.refdoms,
-				"own_social_tw": el.own.social_tw,
-				"own_social_gp": el.own.social_gp,
-				"own_social_fbsh": el.own.social_fbsh,
-				"own_social_sum": el.own.social_sum,
-				"total_kw_max": el.own.total_kw_max
-												   
-			});
+	if (el.length > 0){	
+		
+		for (var i = 0, len = el.competitors.length; i < len; i++) {
+				collectedData.push({
+				   
+					"competitors_url": el.competitors[i].url,
+					"title": el.competitors[i].title,
+					"total_avg_position": el.competitors[i].total_avg_position,
+					"total_kw_count": el.competitors[i].total_kw_count,
+					"total_avg_cpc": el.competitors[i].total_avg_cpc,
+					"total_traffic_index": el.competitors[i].total_traffic_index,
+					"total_seo_value": el.competitors[i].total_seo_value,
+					"total_avg_seo_value": el.competitors[i].total_avg_seo_value,
+					"total_search_volume": el.competitors[i].total_search_volume,
+					"total_traffic_potential": el.competitors[i].total_traffic_potential,
+					"total_seo_value_potential": el.competitors[i].total_seo_value_potential,
+					"comp_kw_count": el.competitors[i].comp_kw_count,
+					"other_kw_count": el.competitors[i].other_kw_count,
+					"kw_relevance": el.competitors[i].kw_relevance,
+					"social_sum": el.competitors[i].social_sum,
+					"social_fbsh": el.competitors[i].social_fbsh,
+					"social_gp": el.competitors[i].social_gp,
+					"backlinks": el.competitors[i].backlinks,
+					"refdoms": el.competitors[i].refdoms,
+					"own_url": el.own.url,
+					"own_title": el.own.title,
+					"own_total_avg_position": el.own.total_avg_position,
+					"own_total_kw_count": el.own.total_kw_count,
+					"own_total_avg_cpc": el.own.total_avg_cpc,
+					"own_total_traffic_index": el.own.total_traffic_index,
+					"own_total_seo_value": el.own.total_seo_value,
+					"own_total_avg_seo_value": el.own.total_avg_seo_value,
+					"own_total_search_volume": el.own.total_search_volume,
+					"own_total_traffic_potential": el.own.total_traffic_potential,
+					"own_total_seo_value_potential": el.own.total_seo_value_potential,
+					"own_backlinks": el.own.backlinks,
+					"own_refdoms": el.own.refdoms,
+					"own_backlinks_max": el.own.backlinks_max,
+					"own_refdoms_max": el.own.refdoms_max,
+					"own_social_tw": el.own.social_tw,
+					"own_refdoms": el.own.refdoms,
+					"own_social_tw": el.own.social_tw,
+					"own_social_gp": el.own.social_gp,
+					"own_social_fbsh": el.own.social_fbsh,
+					"own_social_sum": el.own.social_sum,
+					"total_kw_max": el.own.total_kw_max
+													   
+				});
+			};
+			} else{
+				collectedData.push({
+					"competitors_url": "n/a",
+					"title": "n/a",
+					"total_avg_position": "n/a",
+					"total_kw_count": "n/a",
+					"total_avg_cpc": "n/a",
+					"total_traffic_index": "n/a",
+					"total_seo_value": "n/a",
+					"total_avg_seo_value": "n/a",
+					"total_search_volume": "n/a",
+					"total_traffic_potential": "n/a",
+					"total_seo_value_potential": "n/a" ,
+					"comp_kw_count": "n/a" ,
+					"other_kw_count": "n/a" ,
+					"kw_relevance": "n/a" ,
+					"social_sum": "n/a" ,
+					"social_fbsh": "n/a" ,
+					"social_gp": "n/a" ,
+					"backlinks": "n/a" ,
+					"refdoms": "n/a" ,
+					"own_url": "n/a" ,
+					"own_title": "n/a" ,
+					"own_total_avg_position": "n/a" ,
+					"own_total_kw_count": "n/a" ,
+					"own_total_avg_cpc": "n/a" ,
+					"own_total_traffic_index": "n/a" ,
+					"own_total_seo_value": "n/a" ,
+					"own_total_avg_seo_value": "n/a" ,
+					"own_total_search_volume": "n/a" ,
+					"own_total_traffic_potential": "n/a" ,
+					"own_total_seo_value_potential": "n/a" ,
+					"own_backlinks": "n/a" ,
+					"own_refdoms": "n/a" ,
+					"own_backlinks_max": "n/a" ,
+					"own_refdoms_max": "n/a" ,
+					"own_social_tw": "n/a" ,
+					"own_refdoms": "n/a" ,
+					"own_social_tw": "n/a" ,
+					"own_social_gp": "n/a" ,
+					"own_social_fbsh": "n/a" ,
+					"own_social_sum":"n/a" ,
+					"total_kw_max": "n/a"   
+					});
 		}
 
 	return collectedData;

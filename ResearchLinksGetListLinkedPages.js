@@ -31,16 +31,25 @@ function getResearchLinksGetListLinkedPagesSchema() {
 
 function transformResearchLinksGetListLinkedPagesData(data){
 	var collectedData = [];
-
-	data.response.map(function(el){
-		collectedData.push({
-			"linkedpage": el.linkedpage,
-			"frequency": el.frequency,
-			"percentage": el.percentage,
-			"refdoms": el.refdoms
-		});
-	});
+	var el = data.response;
 	
+		if (typeof el !=="undefined"){
+			data.response.map(function(el){
+				collectedData.push({
+					"linkedpage": el.linkedpage,
+					"frequency": el.frequency,
+					"percentage": el.percentage,
+					"refdoms": el.refdoms
+				});
+			});
+			} else{
+			collectedData.push({
+					"linkedpage": 'n/a',
+					"frequency": 'n/a',
+					"percentage": 'n/a',
+					"refdoms":  'n/a'  
+			});
+		}
 	return collectedData;
 }
 
