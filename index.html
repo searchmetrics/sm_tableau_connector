@@ -17,7 +17,7 @@
 	<script src="ResearchOrganicGetListRankingsKeyword.js" type="text/javascript"></script>
 	<script src="ResearchOrganicGetListRankingsKeywordLongtail.js" type="text/javascript"></script>
 	<script src="ResearchLinksGetListBacklinks.js" type="text/javascript"></script>
-	<!--<script src="ResearchContentGetListUrlKeywordRankings.js" type="text/javascript"></script>-->
+	<script src="ResearchContentGetListUrlKeywordRankings.js" type="text/javascript"></script>
 	<script src="ResearchKeywordsGetListLosers.js" type="text/javascript"></script>
 	<script src="ResearchKeywordsGetListWinners.js" type="text/javascript"></script>
 	<script src="ResearchOrganicGetListSeoVisibilityTop100Losers.js" type="text/javascript"></script>
@@ -118,7 +118,7 @@
 		},
 		
 		
-		/*ResearchContentGetListUrlKeywordRankings: {
+		ResearchContentGetListUrlKeywordRankings: {
 			show:[
 				'countrycode',
 				'url',
@@ -126,7 +126,7 @@
 				'offset'
 				]
 		
-		},*/
+		},
 		
 		ResearchContentGetListTopUrls: {
 			show: [
@@ -381,7 +381,7 @@
 					<option value="BE">BE</option>
 					<option value="BR">BR</option>
 					<option value="CA">CA</option>
-					<option value="CN">CN</option>
+					<option value="cn">CN</option>
 					<option value="CO">CO</option>
 					<option value="DK">DK</option>
 					<option value="FI">FI</option>
@@ -548,6 +548,7 @@ $( document ).ready(function() {
 	$('#apicall').on('change', function(){selectOption(this)});
 	selectOption('#apicall');
 });
+
 
 function hideInputs(){
 	$('input').not('#access_token').prop('disabled', true).closest('div').hide();
