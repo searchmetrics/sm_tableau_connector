@@ -12,6 +12,7 @@
     <script src="https://connectors.tableau.com/libs/tableauwdc-2.3.latest.js" type="text/javascript"></script>
     <script src="CollectApiData.js" type="text/javascript"></script>
     <script src="ProjectOrganicGetListRankingsFilter.js" type="text/javascript"></script>
+   
     <script src="ResearchOrganicGetListRankingsDomain.js" type="text/javascript"></script>
 	<script src="ResearchOrganicGetListRankingsKeyword.js" type="text/javascript"></script>
 	<script src="ResearchOrganicGetListRankingsKeywordLongtail.js" type="text/javascript"></script>
@@ -44,7 +45,7 @@
 	<script src="ResearchOrganicGetListSeoVisibilityCountry.js" type="text/javascript"></script>
 	<script src="ResearchKeywordsGetListKeywordinfo.js" type="text/javascript"></script>
 	<script src="ResearchSocialGetListTopUrls.js" type="text/javascript"></script>
-	<script src="ResearchOrganicGetListSeoVisibilityHistoric.js" type="text/javascript"></script>
+	
 	
 	
     <script type="text/javascript">
@@ -56,12 +57,6 @@
 				'limit',
 				'offset'
 			]
-		},
-		ResearchOrganicGetListIndustrySpread: {
-			show: [
-				'countrycode',
-				'url'
-				]
 		},
         ResearchOrganicGetListRankingsDomain: {
 			show: [
@@ -83,18 +78,30 @@
 			
 		},
 		
-		ResearchOrganicGetListSeoVisibilityCountry: {
-			show: [
-				'url'
+		ResearchLinksGetListBacklinks: {
+			show:[
+				'url',
+				'limit',
+				'offset'
 				]
-		}, 
-			
-		ResearchOrganicGetListSeoVisibilityHistoric: {
+		
+		},	
+		
+		ResearchKeywordsGetListLosers: {
 			show: [
 				'countrycode',
-				'date_from',
-				'date_to',
-				'url'
+				'url',
+				'limit',
+				'offset'
+				]
+		},	
+		
+		ResearchKeywordsGetListWinners: {
+			show: [
+				'countrycode',
+				'url',
+				'limit',
+				'offset'
 				]
 		},
 		
@@ -107,6 +114,62 @@
 		ResearchOrganicGetListSeoVisibilityTop100Winners: {
 			show:[
 				'countrycode'
+				]
+		},
+		
+		
+		ResearchContentGetListUrlKeywordRankings: {
+			show:[
+				'countrycode',
+				'url',
+				'limit',
+				'offset'
+				]
+		
+		},
+		
+		ResearchContentGetListTopUrls: {
+			show: [
+				'domain',
+				'countrycode',
+				'limit',
+				'offset'
+				]
+		},
+		
+		ResearchContentGetListLoserUrls: {
+			show:[
+				'countrycode',
+				'domain',
+				'limit',
+				'offset'
+				]
+		},
+		ResearchContentGetListWinnerUrls: {
+			show:[
+				'countrycode',
+				'domain',
+				'limit',
+				'offset'
+				]
+		},
+
+        ResearchContentGetListCompetitorUrls: {
+			show: [
+				'url',
+				'countrycode',
+				'limit',
+				'offset'
+				]
+		},
+		
+		ResearchOrganicGetListCompetitors: {
+			show: [
+				'url',
+				'countrycode',
+				'currency',
+				'limit',
+				'offset'
 				]
 		},
 		
@@ -126,44 +189,6 @@
 				]
 		},
 		
-		ResearchOrganicGetValueSeoRank: {
-			show: [
-				'url',
-				'countrycode'
-				]
-		},
-		ResearchOrganicGetValueSeoVisibility: {
-			show: [
-				'countrycode',
-				'url'
-				]
-		},
-		
-		ResearchOrganicGetValueSeoVisibilityWorld: {
-			show: [
-				'url'
-				]
-		
-		},
-		
-		
-		ResearchKeywordsGetListKeywordinfo: {
-			show: [
-				'keyword',
-				'countrycode',
-				'currency'
-				
-				]
-		},
-		
-		ResearchKeywordsGetListLosers: {
-			show: [
-				'countrycode',
-				'url',
-				'limit',
-				'offset'
-				]
-		},	
 		ResearchKeywordsGetListSimilarKeywords: {
 			show: [
 				'keyword',
@@ -171,24 +196,12 @@
 				]
 		},
 		
-		ResearchKeywordsGetListWinners: {
+		ResearchOrganicGetListIndustrySpread: {
 			show: [
 				'countrycode',
-				'url',
-				'limit',
-				'offset'
+				'url'
 				]
 		},
-		
-		ResearchLinksGetListBacklinks: {
-			show:[
-				'url',
-				'limit',
-				'offset'
-				]
-		
-		},	
-		
 		
 		ResearchLinksGetListLinkedPages: {
 			show: [
@@ -213,15 +226,6 @@
 				'url'
 				]
 		},
-		ResearchSocialGetListTopUrls: {
-			show: [	
-				'url',
-				'limit',
-				'offset'
-				]
-		}
-		,
-		
 		ResearchUniversalGetListRankingsDomain: {
 			show:[
 				'countrycode',
@@ -230,66 +234,58 @@
 				'offset'
 				]
 		},
-					
+				
+		ResearchOrganicGetValueSeoVisibility: {
+			show: [
+				'countrycode',
+				'url'
+				]
+		},
+		
+		ResearchOrganicGetValueSeoVisibilityWorld: {
+			show: [
+				'url'
+				]
+		
+		},
+		
+		ResearchOrganicGetValueSeoRank: {
+			show: [
+				'url',
+				'countrycode'
+				]
+		},
+		
+		ResearchOrganicGetListSeoVisibilityCountry: {
+			show: [
+				'url'
+				]
+		}, 
+		
+		ResearchKeywordsGetListKeywordinfo: {
+			show: [
+				'keyword',
+				'countrycode',
+				'currency'
+				
+				]
+		},
+		
 		ResearchUniversalGetListVisibility: {
 			show: [
 				'countrycode',
 				'url'
 				]
 		},
-		ResearchOrganicGetListCompetitors: {
-			show: [
-				'url',
-				'countrycode',
-				'currency',
-				'limit',
-				'offset'
-				]
-		},
-		ResearchContentGetListCompetitorUrls: {
-			show: [
-				'url',
-				'countrycode',
-				'limit',
-				'offset'
-				]
-		},
-		ResearchContentGetListLoserUrls: {
-			show:[
-				'countrycode',
-				'domain',
-				'limit',
-				'offset'
-				]
-		},
-		ResearchContentGetListTopUrls: {
-			show: [
-				'domain',
-				'countrycode',
-				'limit',
-				'offset'
-				]
-		},
-				
-		ResearchContentGetListUrlKeywordRankings: {
-			show:[
-				'countrycode',
-				'url',
-				'limit',
-				'offset'
-				]
 		
-		},
-					
-		ResearchContentGetListWinnerUrls: {
-			show:[
-				'countrycode',
-				'domain',
+		ResearchSocialGetListTopUrls: {
+			show: [	
+				'url',
 				'limit',
 				'offset'
 				]
-		},
-
+		}
+		,
 		ProjectOrganicGetListRankingsFilter: {
 			show: [
 				'url',
@@ -328,7 +324,8 @@
 				'limit',
 				'offset'
 				]
-		}		
+		}
+		
 
 	};
 	</script>
@@ -426,10 +423,7 @@
 					<label>Date: </label>
 					<input id="year_month" name="year_month" type="text" />
 				</div>
-				<div title="Date. &#10;Format: YYYYMM">
-					<label>Date: </label>
-					<input id="date" name="date" type="text" />
-				</div>					
+									
 				<div title="Filter: Lowest ranking of keywords that should be considered in the count.&#10;E.g. if you want to count all keywords starting from the position 4 (meaning 4,5,6 etc.) this parameter has to be set to &quot;Format: 1,2,3 etc.">
 					<label>Position from: </label>
 					<input id="position_from " name="position_from " type="text" />
