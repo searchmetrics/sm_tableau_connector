@@ -6,7 +6,7 @@ function getProjectOrganicGetListSeoVisibilityHistoricS7Schema(){
 			{
 				id: "date",
 				alias: "date",
-				dataType: tableau.dataTypeEnum.string
+				dataType: tableau.dataTypeEnum.date
 			},
 			{
 				id: "domain",
