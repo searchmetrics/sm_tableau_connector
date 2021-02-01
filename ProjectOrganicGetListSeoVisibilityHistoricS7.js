@@ -19,8 +19,8 @@ function getProjectOrganicGetListSeoVisibilityHistoricS7Schema(){
 				dataType: tableau.dataTypeEnum.int
 			},
 			{
-				id: "count_keyword",
-				alias: "count_kewyord",
+				id: "count_keywords",
+				alias: "count_kewyords",
 				dataType: tableau.dataTypeEnum.int
 			}
 		]
