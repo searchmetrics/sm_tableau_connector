@@ -32,10 +32,10 @@ function transformProjectOrganicGetListSeoVisibilityHistoricS7Data(data){
 
 	data.response.map(function(el){
 		collectedData.push({
-			"date": el[0].date,
-			"domain": el[0].data[0].domain,
-			"sum_visibility": el[0].data[0].sum_visibility,
-			"count_keywords": el[0].data[0].count_keywords 
+			"date": el.date,
+			"domain": el.data[0].domain,
+			"sum_visibility": el.data[0].sum_visibility,
+			"count_keywords": el.data[0].count_keywords 
 		});
 	});
 
