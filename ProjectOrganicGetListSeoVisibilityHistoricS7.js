@@ -27,15 +27,15 @@ function getProjectOrganicGetListSeoVisibilityHistoricS7Schema(){
 	};
 }
 	
-function transformProjectOrganicGetListSeoVisibilityHistoricData(data){
+function transformProjectOrganicGetListSeoVisibilityHistoricS7Data(data){
 	var collectedData = [];
 
 	data.response.map(function(el){
 		collectedData.push({
-			"date": el.date,
-			"domain": el.data[0].domain,
-			"sum_visibility": el.data[0].sum_visibility,
-			"count_keywords": el.data[0].count_keywords 
+			"date": el[0].date,
+			"domain": el[0].data[0].domain,
+			"sum_visibility": el[0].data[0].sum_visibility,
+			"count_keywords": el[0].data[0].count_keywords 
 		});
 	});
 
