@@ -11,8 +11,8 @@ function getResearchOrganicGetListSeoVisibilityHistoricSchema() {
 			},
 			{
 				id: "date",
-				alias: "date",
-				dataType: tableau.dataTypeEnum.date
+				alias: "date__",
+				dataType: tableau.dataTypeEnum.string
 			},
 			{
 				id: "visibility",
@@ -62,7 +62,7 @@ function transformResearchOrganicGetListSeoVisibilityHistoricData(input){
      
    urls.forEach(url => {
      const datesArray = Object.entries(data[url]);
-     //console.log(datesArray)
+     console.log(datesArray)
      datesArray.forEach(([date, vis]) => {
        collectedData.push({
          url,
