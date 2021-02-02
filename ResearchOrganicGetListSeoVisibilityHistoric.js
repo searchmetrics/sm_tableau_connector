@@ -11,7 +11,7 @@ function getResearchOrganicGetListSeoVisibilityHistoricSchema() {
 			},
 			{
 				id: "date",
-				alias: "date__",
+				alias: "date",
 				dataType: tableau.dataTypeEnum.string
 			},
 			{
