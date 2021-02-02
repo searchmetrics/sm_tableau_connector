@@ -357,6 +357,17 @@
 				'date_to'
 				]
 		},	
+
+		ProjectOrganicGetListMarketShareS7: {
+			show: [
+				'project_id',
+				'se_id',
+				'url',
+				'date_from',
+				'date_to',
+				'tags'
+				]
+		},	
 		
 
 	};
@@ -558,6 +569,11 @@
 					<label>Delta traffic to:</label>
 					<input id="delta_traffic_to" name="delta_traffic_to" type="text" />
 				</div>
+
+				<div title="Filter: Set the url encoded S7 tag full path to query data for. If tag name contains the / character, it has to be escaped with";Format: String">
+					<label>Tags:</label>
+					<input id="tags" name="tags" type="text" />
+				</div>
             </form>
 
 
@@ -570,7 +586,7 @@
     </div>
 </body>              
 <script>
-<!--Javascript für die Option-->
+//<!--Javascript für die Option-->
 $( document ).ready(function() {
 	hideInputs();
 

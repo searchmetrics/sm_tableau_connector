@@ -23,7 +23,7 @@ function getResearchOrganicGetListSeoVisibilityHistoricSchema() {
 	};
 }
 
-function transformResearchOrganicGetListSeoVisibilityHistoricData(data){
+/*function transformResearchOrganicGetListSeoVisibilityHistoricData(data){
 	var collectedData = [];
 	var el = data.response;
 	var url_json = Object.keys(el);
@@ -41,7 +41,7 @@ function transformResearchOrganicGetListSeoVisibilityHistoricData(data){
 
  //console.log(Object.keys(el));
 			
-		for (let key in el[Object.keys(el)]) {
+	/*	for (let key in el[Object.keys(el)]) {
 		collectedData.push({
 				
 				"url": Object.keys(el),	
@@ -53,5 +53,24 @@ function transformResearchOrganicGetListSeoVisibilityHistoricData(data){
 	
 	
 	return collectedData;
-}
+}*/
 
+function transformResearchOrganicGetListSeoVisibilityHistoricData(input){
+    var collectedData = [];
+    var data = input.response;
+    var urls = Object.keys(data);
+     
+   urls.forEach(url => {
+     const datesArray = Object.entries(data[url]);
+     //console.log(datesArray)
+     datesArray.forEach(([date, vis]) => {
+       collectedData.push({
+         url,
+         visbility: vis,
+         date,
+       })
+     })
+   })
+  return collectedData;
+   
+}
