@@ -16,7 +16,7 @@ function getProjectOrganicGetListMarketShareS7Schema(){
 			{
 				id: "marketshare",
 				alias: "marketshare",
-				dataType: tableau.dataTypeEnum.int
+				dataType: tableau.dataTypeEnum.float
 			},
 			{
 				id: "url",
