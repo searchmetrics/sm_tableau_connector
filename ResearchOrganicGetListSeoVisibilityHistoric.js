@@ -66,7 +66,7 @@ function transformResearchOrganicGetListSeoVisibilityHistoricData(input){
      datesArray.forEach(([date, vis]) => {
        collectedData.push({
          url,
-         visbility: vis,
+         visibility: vis,
          date,
        })
      })
