@@ -34,8 +34,8 @@ function transformProjectOrganicGetListMarketShareS7Data(data){
 		collectedData.push({
 			"date": el.date,
 			"domain": el.data[0].domain,
-			"sum_visibility": el.data[0].marketshare,
-			"count_keywords": el.data[0].url 
+			"marketshare": el.data[0].marketshare,
+			"url": el.data[0].url 
 		});
 	});
 
