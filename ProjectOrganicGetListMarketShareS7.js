@@ -22,11 +22,6 @@ function getProjectOrganicGetListMarketShareS7Schema(){
 				id: "url",
 				alias: "url",
 				dataType: tableau.dataTypeEnum.string
-			},
-			{
-				id: "host",
-				alias: "host",
-				dataType: tableau.dataTypeEnum.string
 			}
 		]
 	};
@@ -40,8 +35,7 @@ function transformProjectOrganicGetListMarketShareS7Data(data){
 			"date": el.date,
 			"domain": el.data[0].domain,
 			"marketshare": el.data[0].marketshare,
-			"url": el.data[0].url,
-			"host": el.data[0].host
+			"url": el.data[0].url 
 		});
 	});
 
