@@ -25,9 +25,11 @@ function datacollect() {
     };
 
     myConnector.getData = function (table, doneCallback) {
-		var data = JSON.parse(tableau.connectionData);
+		    var data = JSON.parse(tableau.connectionData);
 
-        var url_json = 'http://api.searchmetrics.com/v3/' + tableau.connectionName + '.json?' + data.params;
+		    const newParams = processExpressions(data.params);
+
+        var url_json = 'http://api.searchmetrics.com/v3/' + tableau.connectionName + '.json?' + newParams;
         var transform = 'transform' + tableau.connectionName + 'Data';
 
         $.getJSON(url_json, function(response) {

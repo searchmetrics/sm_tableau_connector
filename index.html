@@ -10,6 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
 
     <script src="https://connectors.tableau.com/libs/tableauwdc-2.3.latest.js" type="text/javascript"></script>
+    <script src="expressions.js" type="text/javascript"></script>
     <script src="CollectApiData.js" type="text/javascript"></script>
     <script src="ProjectOrganicGetListRankingsFilter.js" type="text/javascript"></script>
     <script src="ResearchOrganicGetListRankingsDomain.js" type="text/javascript"></script>
@@ -598,6 +599,21 @@ $( document ).ready(function() {
 	
 	$('#apicall').on('change', function(){selectOption(this)});
 	selectOption('#apicall');
+
+	// TODO: REMOVE DEBUG CODE
+	/*
+	$('#access_token').val('567b38e3656390958304cc06f1e03ea780d5b4bf');
+	$('#countrycode').val('DE');
+	$('#apicall').val('ResearchOrganicGetListSeoVisibilityHistoric');
+	selectOption($('#apicall'));
+	$('#url').val('searchmetrics.com');
+
+	// $('#date_from').val('20201101');
+	$('#date_from').val('${today-6m}');
+
+	// $('#date_to').val('20210203');
+	$('#date_to').val('${today-1d}');
+  */
 });
 
 
