@@ -27,7 +27,7 @@ function datacollect() {
     myConnector.getData = function (table, doneCallback) {
 		var data = JSON.parse(tableau.connectionData);
 
-        var url_json = 'http://api.searchmetrics.com/v3/' + tableau.connectionName + '.json?' + data.params;
+        var url_json = 'https://api.searchmetrics.com/v4/' + tableau.connectionName + '.json?' + data.params;
         var transform = 'transform' + tableau.connectionName + 'Data';
 
         $.getJSON(url_json, function(response) {
