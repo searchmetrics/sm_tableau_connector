@@ -29,7 +29,7 @@ function datacollect() {
 
 		    const newParams = processExpressions(data.params);
 
-        var url_json = 'https://api.searchmetrics.com/v4/' + tableau.connectionName + '.json?' + newParams;
+        var url_json = 'https://api.searchmetrics.com/v3/' + tableau.connectionName + '.json?' + newParams;
         var transform = 'transform' + tableau.connectionName + 'Data';
 
         $.getJSON(url_json, function(response) {
