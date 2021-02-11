@@ -147,6 +147,14 @@ function formatDate(date) {
   return str;
 }
 
+function escapeRegExp(string) {
+  return string.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+}
+
+function replaceAll(str, find, replace) {
+  return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+}
+
 //
 // main
 //
@@ -156,11 +164,20 @@ function processExpressions(inputStr) {
 
   let result = inputStr;
 
-  Object.keys(expressionsMap).forEach(function (key, index) {
-    // console.log('  expression:', key);
-    result = result.replaceAll(encodeURIComponent(key), encodeURIComponent(expressionsMap[key]()));
-    // console.log('step:', result);
-  });
+  if(result.indexOf(encodeURIComponent('${')) === -1) {
+    console.log('no expressions found');
+  } else {
+
+    Object.keys(expressionsMap).forEach(function (key, index) {
+      // console.log('  expression:', key);
+      result = replaceAll(
+        result,
+        encodeURIComponent(key),
+        encodeURIComponent(expressionsMap[key]())
+      );
+      // console.log('step:', result);
+    });
+  }
 
   console.warn('processExpressions result:\n', decodeURIComponent(result));
   return result;
