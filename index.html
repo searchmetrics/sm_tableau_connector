@@ -49,7 +49,10 @@
 	<script src="ResearchOrganicGetListSeoVisibilityHistoric.js" type="text/javascript"></script>
 	<script src="ProjectOrganicGetListSeoVisibilityHistoricS7.js" type="text/javascript"></script>
 	<script src="ProjectOrganicGetListMarketShareS7.js" type="text/javascript"></script>
-	
+	<script src="ProjectOrganicGetListRankingsFilterS7.js" type="text/javascript"></script>
+	<script src="ProjectOrganicGetListLosersS7.js" type="text/javascript"></script>
+	<script src="ProjectOrganicGetListWinnersS7.js" type="text/javascript"></script>
+	<script src="ProjectOrganicGetListBenchmarkRankingsS7.js" type="text/javascript"></script>
 	
     <script type="text/javascript">
 	var mapObj = {
@@ -306,8 +309,24 @@
 				'project_id'				
 			]
 		},
+
+		ProjectOrganicGetListRankingsFilterS7: {
+			show: [
+				'url',
+				'se_id',
+				'project_id'				
+			]
+		},
+		
 		
 		ProjectOrganicGetListBenchmarkRankings: {
+			show:[
+				'project_id',
+				'se_id',
+				'urls'
+				]
+		},
+		ProjectOrganicGetListBenchmarkRankingsS7: {
 			show:[
 				'project_id',
 				'se_id',
@@ -326,6 +345,18 @@
 				'offset'
 				]
 		},
+		ProjectOrganicGetListLosersS7: {
+			show:[
+				'project_id',
+				'se_id',
+				'urls',
+				'date_from',
+				'date_to',
+				'limit',
+				'offset'
+				]
+		},
+		
 		
 		ProjectOrganicGetListWinners: {
 			show: [
@@ -337,9 +368,18 @@
 				'limit',
 				'offset'
 				]
-		}
-		,
-		
+		},
+		ProjectOrganicGetListWinnersS7: {
+			show: [
+				'project_id',
+				'se_id',
+				'urls',
+				'date_from',
+				'date_to',
+				'limit',
+				'offset'
+				]
+		},
 	ResearchOrganicGetListSeoVisibilityHistoric: {
 			show: [
 				'countrycode',
