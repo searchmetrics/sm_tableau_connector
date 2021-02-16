@@ -89,7 +89,7 @@ function transformProjectOrganicGetListRankingsFilterS7Data(data){
 			"cpc": el.pos[0].cpc,
 			"trend": el.pos[0].trend.trend,
 			"keyword": el.keyword,
-			"tags": el.tags 
+			"tags": el.pos[0].tags 
 		});
 	});
 
